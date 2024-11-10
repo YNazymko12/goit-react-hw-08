@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { selectFilteredContacts } from '../../redux/contactsSlice';
+import { selectFilteredContacts } from '../../redux/contacts/selectors';
 
 import Contact from '../Contact/Contact';
 
@@ -16,7 +16,7 @@ const ContactList = () => {
             key={contact.id}
             id={contact.id}
             name={contact.name}
-            phone={contact.phone}
+            number={contact.number}
           />
         ))}
       </ul>

@@ -1,12 +1,18 @@
 import { useDispatch } from 'react-redux';
-import css from './Contact.module.css';
-import { deleteContact } from '../../redux/contactsOps';
+import { deleteContact } from '../../redux/contacts/operations';
+import { toast } from 'react-toastify';
 
-const Contact = ({ id, name, phone }) => {
+import css from './Contact.module.css';
+
+const Contact = ({ id, name, number }) => {
   const dispatch = useDispatch();
 
   const handleDelete = () => {
-    dispatch(deleteContact(id));
+    dispatch(deleteContact(id))
+      .unwrap()
+      .catch(() => {
+        toast.error('OOPS... Failed to delete contact. Please try again.');
+      });
   };
 
   return (
@@ -23,7 +29,7 @@ const Contact = ({ id, name, phone }) => {
             <span className={css.span} role="img" aria-label="Phone Number">
               📞
             </span>
-            {phone}
+            {number}
           </p>
         </div>
         <button className={css.btn} type="button" onClick={handleDelete}>

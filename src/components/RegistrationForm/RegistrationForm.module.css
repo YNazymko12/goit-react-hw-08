@@ -1,24 +1,23 @@
-.form {
-  min-width: 360px;
+.registrationForm {
+  width: 400px;
   display: flex;
   flex-direction: column;
   align-items: start;
   border: 2px solid #ccc;
   border-radius: 4px;
   padding: 24px;
-  margin-bottom: 32px;
 }
 
-.label {
+.registrationLabel {
   margin-bottom: 8px;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 16px;
 }
-.labelWithSpace {
-  margin-top: 16px;
+.registrationLabelWithSpace {
+  margin-top: 24px;
 }
 
-.input {
+.registrationInput {
   width: 100%;
   padding: 8px;
   border: 1px solid #ccc;
@@ -28,15 +27,16 @@
   font-size: 16px;
 }
 
-.input:focus {
+.registrationInput:hover,
+.registrationInput:focus {
   border-color: #5d3f8a;
 }
 
-.btn {
-  margin: 24px auto 0;
+.registrationBtn {
+  margin: 32px auto 0;
   border-radius: 8px;
   border: none;
-  padding: 0.6em 1.2em;
+  padding: 12px 32px;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
@@ -46,10 +46,7 @@
   transition: background-color 0.25s;
 }
 
-.btn:hover {
-  background-color: #673c98;
-}
-
 .error {
+  margin-top: 4px;
   color: red;
 }
